@@ -1386,6 +1386,7 @@ CURLcode curl_mime_data(curl_mimepart *part,
     if(!part->data)
       return CURLE_OUT_OF_MEMORY;
 
+    part->datasize = datasize;
     part->readfunc = mime_mem_read;
     part->seekfunc = mime_mem_seek;
     part->freefunc = mime_mem_free;
